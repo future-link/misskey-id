@@ -2,6 +2,9 @@
   "name": "misskey-id",
   "version": "0.0.0",
   "description": "misskey-auth frontend for authenticate",
+  "scripts": {
+    "build": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/future-link/misskey-id.git"
@@ -13,8 +16,10 @@
   },
   "homepage": "https://github.com/future-link/misskey-id#readme",
   "dependencies": {
+    "vue": "^2.4.2"
+  },
+  "devDependencies": {
     "@std/esm": "^0.5.1",
-    "vue": "^2.4.2",
     "webpack": "^3.5.5"
   }
 }
