@@ -27,10 +27,5 @@ export default {
                 props: true
             }
         })
-    ],
-    resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-        }
-    }
+    ]
 }
