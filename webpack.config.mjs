@@ -18,6 +18,7 @@ export default {
     output: {
         path: path.resolve('dist', 'assets'),
         filename: '[name].bundle.js',
+        publicPath: '/dist/assets/'
     },
     devServer: {
         contentBase: './dist'
