@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@std/esm": "^0.5.1",
-    "webpack": "^3.5.5"
+    "pug": "^2.0.0-rc.3",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }
