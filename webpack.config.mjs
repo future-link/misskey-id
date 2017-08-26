@@ -3,8 +3,7 @@ import webpack from 'webpack'
 
 export default {
     entry: {
-        'app': path.resolve('app', 'app.mjs'),
-        'app2': path.resolve('app', 'app2.mjs')
+        'app': path.resolve('app', 'app.mjs')
     },
     output: {
         filename: '[name].bundle.js',
@@ -17,10 +16,6 @@ export default {
                     NODE_ENV: JSON.stringify(process.env.NODE_ENV == 'production' ? process.env.NODE_ENV : 'development')
                 }
             }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            chunks: ['app', 'app2']
         }),
         new webpack.optimize.UglifyJsPlugin({
             mangle: {
