@@ -18,7 +18,7 @@ export default {
     output: {
         path: path.resolve('dist', 'assets'),
         filename: '[name].bundle.js',
-        publicPath: '/dist/assets/'
+        publicPath: '/assets/'
     },
     devServer: {
         contentBase: './dist'
@@ -31,10 +31,6 @@ export default {
                 }
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: {
-                props: true
-            }
-        })
+        //new webpack.optimize.UglifyJsPlugin()
     ]
 }

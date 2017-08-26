@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "misskey-auth frontend for authenticate",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
