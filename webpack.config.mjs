@@ -20,6 +20,14 @@ export default {
         filename: '[name].bundle.js',
         publicPath: '/assets/'
     },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
+        ]
+    },
     devServer: {
         contentBase: './dist'
     },
