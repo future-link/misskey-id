@@ -1,8 +1,6 @@
 html
     head
         meta#head(description='will be injected')
-        script(src='/assets/vendor.bundle.js')
-        script(src='/assets/head.bundle.js')
+        script(src='/assets/app.bundle.js' defer)
     body
-        app
-        script(src='/assets/app.bundle.js')
+        #app

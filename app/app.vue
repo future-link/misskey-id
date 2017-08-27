@@ -1,14 +1,3 @@
 <template lang="pug">
-app
-    p {{ yo }}
+router-view
 </template>
-
-<script>
-export default {
-    data () {
-        return {
-            yo: 'yo yo yo yeah'
-        }
-    }
-}
-</script>
