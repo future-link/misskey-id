@@ -7,7 +7,7 @@ import pug from 'pug'
 
 fs.writeFileSync(
     path.resolve('dist', 'index.html'),
-    pug.compileFile(path.resolve('app', 'app.pug'))()
+    pug.compileFile(path.resolve('app', 'index.pug'))()
 )
 
 // webpack configurations
