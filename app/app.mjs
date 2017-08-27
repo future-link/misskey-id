@@ -20,16 +20,24 @@ const routes = {
 const route = routes[location.pathname || 'notfound']
 Vue.component('router-view', route.component)
 
+// https://vuejs.org/v2/guide/components.html#Non-Parent-Child-Communication
+const bus = new Vue()
+
 new Vue({
   el: '#head',
   render: h => h(head, {
     props: {
-      title: route.title
+      title: route.title,
+      bus
     }
   })
 })
 
 new Vue({
   el: '#app',
-  render: h => h(app)
+  render: h => h(app, {
+    props: {
+      bus
+    }
+  })
 })

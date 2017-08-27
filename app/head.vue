@@ -1,9 +1,19 @@
 <template lang="pug">
-title {{title}}
+title {{stitle}}
 </template>
 
 <script>
 export default {
-    props: ['title']
+    props: ['title', 'bus'],
+    data() {
+        return {
+            stitle: this.title
+        }
+    },
+    created () {
+        this.bus.$on('title', (title) => {
+            this.stitle = title
+        })
+    }
 }
 </script>
