@@ -13,7 +13,8 @@ fs.writeFileSync(
 // webpack configurations
 export default {
     entry: {
-        'app': [path.resolve('app', 'app.mjs')]
+        'app': [path.resolve('app', 'app.mjs')],
+        'head': [path.resolve('app', 'head.mjs')]
     },
     output: {
         path: path.resolve('dist', 'assets'),
@@ -38,6 +39,10 @@ export default {
                     NODE_ENV: JSON.stringify(process.env.NODE_ENV == 'production' ? process.env.NODE_ENV : 'development')
                 }
             }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            chunks: ['app', 'head']
         }),
         //new webpack.optimize.UglifyJsPlugin()
     ]

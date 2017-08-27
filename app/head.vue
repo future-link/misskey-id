@@ -1,13 +1,12 @@
 <template lang="pug">
-app
-    p {{ yo }}
+title {{name}}
 </template>
 
 <script>
 export default {
     data () {
         return {
-            yo: 'yo yo yo yeah'
+            name: `yo app ${Math.round(Math.random() * 1000)}`
         }
     }
 }
