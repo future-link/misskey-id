@@ -2,15 +2,6 @@ import path from 'path'
 import webpack from 'webpack'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
-// part of non webpack tasks
-import fs from 'fs'
-import pug from 'pug'
-
-fs.writeFileSync(
-    path.resolve('dist', 'index.html'),
-    pug.compileFile(path.resolve('app', 'index.pug'))()
-)
-
 // webpack configurations
 export default {
     entry: {
