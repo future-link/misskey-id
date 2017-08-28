@@ -4,7 +4,8 @@
   "description": "misskey-auth frontend for authenticate",
   "scripts": {
     "build": "webpack",
-    "start": "node -r @std/esm ./server.mjs"
+    "start": "node -r @std/esm ./server.mjs",
+    "watch": "bash -c 'webpack --watch & npm start'"
   },
   "repository": {
     "type": "git",
