@@ -25,6 +25,10 @@ export default {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.mjs$/,
+                loader: 'buble-loader'
             }
         ]
     },
@@ -39,10 +43,10 @@ export default {
                 }
             }
         }),
+        new webpack.optimize.UglifyJsPlugin()
         /*new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             chunks: ['app']
-        }),
-        new webpack.optimize.UglifyJsPlugin()*/
+        }),*/
     ]
 }
