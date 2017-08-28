@@ -1,18 +1,18 @@
 <template lang="pug">
-title {{stitle}}
+title {{title}}
 </template>
 
 <script>
 export default {
-    props: ['title', 'bus'],
+    props: ['bus'],
     data() {
         return {
-            stitle: this.title
+            title: ''
         }
     },
     created () {
         this.bus.$on('title', (title) => {
-            this.stitle = title
+            this.title = title
         })
     }
 }

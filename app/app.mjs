@@ -1,24 +1,29 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+// root components
 import head from './head.vue'
 import app from './app.vue'
 
-// components
-import hogeComponent from './components/hoge.vue'
-import notfoundComponent from './components/notfound.vue'
+// page components
+import index from './pages/index.vue'
+import notfound from './pages/notfound.vue'
 
-// select components by route
-const routes = {
-  '/': {
-    title: 'hoge',
-    component: hogeComponent
+const routes = [
+  {
+    path: '/',
+    component: index
   },
-  'notfound': {
-    title: 'notfound',
-    component: notfoundComponent
+  {
+    path: '/(.*)',
+    component: notfound
   }
-}
-const route = routes[location.pathname || 'notfound']
-Vue.component('router-view', route.component)
+]
+const router = new VueRouter({
+  routes
+})
 
 // https://vuejs.org/v2/guide/components.html#Non-Parent-Child-Communication
 const bus = new Vue()
@@ -27,17 +32,20 @@ new Vue({
   el: '#head',
   render: h => h(head, {
     props: {
-      title: route.title,
       bus
     }
   })
 })
 
 new Vue({
-  el: '#app',
-  render: h => h(app, {
-    props: {
-      bus
+  el: "#app",
+  render: h => h(
+    app,
+    {
+      props: {
+        bus
+      }
     }
-  })
+  ),
+  router
 })

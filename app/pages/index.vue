@@ -6,9 +6,7 @@ p hoge
 export default {
     props: ['bus'],
     mounted() {
-        setTimeout(() => {
-            this.bus.$emit('title', 'gggggg')
-        }, 1000)
+        this.bus.$emit('title', 'this is hoge!')
     }
 }
 </script>
