@@ -7,7 +7,7 @@ const app = express()
 
 app.set('view engine', 'pug')
 
-app.use(express.static('dist'))
+app.use('/assets', express.static('dist'))
 app.get('/*.*', (req, res) => res.sendStatus(404))
 app.get('/*', (req, res) => res.render('index'))
 

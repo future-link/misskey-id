@@ -8,9 +8,8 @@ export default {
         'app': [path.resolve('app', 'bootstrap.mjs')]
     },
     output: {
-        path: path.resolve('dist', 'assets'),
-        filename: '[name].bundle.js',
-        publicPath: '/assets/'
+        path: path.resolve('dist'),
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [
@@ -19,9 +18,6 @@ export default {
                 loader: 'vue-loader'
             }
         ]
-    },
-    devServer: {
-        contentBase: './dist'
     },
     plugins: [
         new webpack.DefinePlugin({
