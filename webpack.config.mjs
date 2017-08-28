@@ -41,9 +41,5 @@ export default {
             }
         }),
         new UglifyJsPlugin()
-        /*new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            chunks: ['app']
-        }),*/
     ]
 }
