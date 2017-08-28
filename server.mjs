@@ -1,10 +1,16 @@
-import Express from 'express'
+import express from 'express'
 import dotenv from 'dotenv-safe'
 
 dotenv.load()
 
-const express = Express()
+const app = express()
 
-express.listen(process.env.ID_PORT, () => {
+app.set('view engine', 'pug')
+
+app.use(express.static('dist'))
+app.get('/favicon.ico', (req, res) => res.sendStatus(404))
+app.get('/*', (req, res) => res.render('index'))
+
+app.listen(process.env.ID_PORT, () => {
     console.log(`listening on *:${process.env.ID_PORT}`)
 })
