@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "misskey-auth frontend for authenticate",
   "scripts": {
-    "build": "webpack",
-    "start": "node -r @std/esm ./server.mjs",
+    "build": "NODE_ENV='production' ./node_modules/.bin/webpack",
+    "start": "NODE_ENV='production' node -r @std/esm ./server.mjs",
     "watch": "bash -c 'webpack --watch & npm start'"
   },
   "repository": {
